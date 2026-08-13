@@ -17,3 +17,13 @@ Não coloque estes arquivos dentro de outra pasta no GitHub.
 O index.html deve ficar visível na tela principal do repositório.
 
 Depois do upload, aguarde alguns minutos e atualize o GitHub Pages com Ctrl+F5.
+
+
+V1.6.1 — CADASTROS INTEGRADOS
+- Configurações Gerais agora alimentam automaticamente os novos cadastros.
+- Novo locatário recebe forma de pagamento, taxa de boleto, responsável pela taxa e banco emissor definidos nas Configurações Gerais.
+- Novo condomínio recebe valor padrão e dia padrão de vencimento definidos nas Configurações Gerais.
+- Novo imóvel recebe concessionária e tarifa de energia definidas nas Configurações Gerais.
+- Ao selecionar um locatário no contrato, a forma de cobrança e taxa são preenchidas automaticamente.
+- Ao selecionar um imóvel no contrato, o valor do condomínio vinculado é preenchido automaticamente.
+- Valores específicos cadastrados continuam prevalecendo sobre os padrões gerais.
