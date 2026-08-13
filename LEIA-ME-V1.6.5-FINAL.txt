@@ -1,0 +1,14 @@
+
+LO C A G E S T  V1.6.5 — FINAL / LIMPO
+
+ALTERAÇÕES:
+- Persistência do Firebase alterada de LOCAL para SESSION.
+- O navegador pede login novamente após encerrar a sessão.
+- Cache local antigo do LocaGest é limpo uma única vez nesta versão.
+- Mantida a chave Firebase corrigida.
+- Incluído RESETAR_LOGIN_FIREBASE.html para excluir, com confirmação, os dados e o login Firebase de uma conta.
+
+IMPORTANTE SOBRE "ZERAR TUDO":
+O ZIP não consegue apagar sozinho todos os usuários do Firebase Authentication sem credenciais administrativas.
+Para zerar os logins existentes, use RESETAR_LOGIN_FIREBASE.html para cada conta, ou exclua os usuários em Firebase > Authentication > Usuários.
+Depois, Realtime Database > Dados deve ficar sem nós de usuarios.

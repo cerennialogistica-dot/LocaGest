@@ -1,6 +1,17 @@
 (function () {
   'use strict';
   const PREFIX = 'locagest_fb_cache_';
+  const CLEAN_VERSION = '1.6.5';
+  try {
+    if (localStorage.getItem('locagest_clean_version') !== CLEAN_VERSION) {
+      Object.keys(localStorage).forEach(k => {
+        if (k.startsWith('locagest_')) localStorage.removeItem(k);
+      });
+      sessionStorage.clear();
+      localStorage.setItem('locagest_clean_version', CLEAN_VERSION);
+    }
+  } catch {}
+
   let uid = '';
   let cache = {};
   let userRef = null;
@@ -42,7 +53,7 @@
     if (!firebase.apps.length) firebase.initializeApp(window.LOCAGEST_FIREBASE_CONFIG);
     const auth = firebase.auth();
     const db = firebase.database();
-    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(console.error);
+    auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).catch(console.error);
 
     let readyResolved = false;
     const finishReady = (value) => { if (!readyResolved) { readyResolved = true; resolve(value); } };
