@@ -1,0 +1,19 @@
+LOCAGEST — VERSÃO GITHUB PAGES
+
+Esta pasta já está preparada para ser enviada diretamente para a RAIZ do repositório LocaGest.
+
+Envie/substitua estes arquivos:
+- index.html
+- style.css
+- app.js
+- masks.js
+- storage.js
+- utils.js
+- .nojekyll
+- assets/ (se existir)
+
+IMPORTANTE:
+Não coloque estes arquivos dentro de outra pasta no GitHub.
+O index.html deve ficar visível na tela principal do repositório.
+
+Depois do upload, aguarde alguns minutos e atualize o GitHub Pages com Ctrl+F5.
