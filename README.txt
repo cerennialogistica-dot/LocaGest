@@ -173,3 +173,10 @@ V1.5.0 — REVISÃO FINAL / PRODUÇÃO
 - Dashboard ajustado para considerar despesas vinculadas diretamente ao login.
 - Refinamento visual geral: cards, tabelas, formulários, modais, botões, espaçamentos e responsividade.
 - Validação de sintaxe executada em todos os arquivos JavaScript.
+
+V1.6.0 — FIREBASE ONLINE
+- Login real com Firebase Authentication (e-mail e senha).
+- Realtime Database integrado.
+- Dados isolados por UID do locador.
+- Cache local de apoio, com banco Firebase como armazenamento online.
+- GitHub Pages mantido como hospedagem do front-end.

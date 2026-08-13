@@ -365,3 +365,6 @@ textarea.form-control { min-height: 90px; resize: vertical; }
 .settings-section{margin-bottom:18px}.panel-header{padding:17px 19px}.panel-header h3{font-size:15px}.panel-header span{font-size:11px}.panel-body{padding:18px}
 .payment-summary>div,.payment-total{border-radius:12px}.payment-total{border:1px solid #cfe0fa}
 @media(max-width:900px){.content-area{padding:20px 16px 32px}.topbar{padding:0 16px}.topbar-actions .search-box{display:none}}
+
+/* V1.6.0 — Firebase */
+.firebase-status{margin-top:16px;padding:11px 12px;border-radius:10px;background:#eef7f4;color:#2d6a57;font-size:12px;text-align:center;border:1px solid #d8ece5}.firebase-status i{margin-right:6px}.form-control[readonly]{background:#f4f6f8;color:#667085;cursor:not-allowed}

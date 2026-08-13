@@ -1,0 +1,36 @@
+LOCAGEST V1.6.0 — FIREBASE + GITHUB PAGES
+
+INTEGRAÇÃO ATIVADA
+- Firebase Authentication por e-mail e senha.
+- Firebase Realtime Database como banco online.
+- Cada login usa o UID do Firebase e grava somente em usuarios/{uid}/dados.
+- O localStorage é usado apenas como cache local de apoio; a fonte online é o Firebase.
+- Perfil, locatários, imóveis, condomínios, contratos, mensalidades, recibos, despesas e configurações são sincronizados.
+
+REGRAS DO REALTIME DATABASE NECESSÁRIAS:
+{
+  "rules": {
+    "usuarios": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    }
+  }
+}
+
+GITHUB PAGES
+Envie TODOS os arquivos deste pacote para a raiz do repositório LocaGest, substituindo os antigos.
+O arquivo firebase-config.js também deve ser enviado.
+
+PRIMEIRO ACESSO
+1. Abra o site publicado.
+2. Clique em "Criar novo locador".
+3. Cadastre nome, e-mail e senha (mínimo 6 caracteres).
+4. O Firebase criará uma conta separada e um ambiente de dados exclusivo.
+5. Nos próximos acessos, use o e-mail e a senha.
+
+IMPORTANTE
+- Os logins locais antigos não são senhas do Firebase. Crie a conta Firebase pelo novo formulário.
+- Não use o mesmo e-mail para dois locadores.
+- A configuração firebaseConfig é pública por natureza; a proteção depende do Authentication e das Rules.
