@@ -91,7 +91,7 @@
           'auth/weak-password':'A senha precisa ter pelo menos 6 caracteres.', 'auth/too-many-requests':'Muitas tentativas. Aguarde alguns minutos e tente novamente.',
           'auth/requires-recent-login':'Por segurança, saia e entre novamente antes de alterar a senha.',
           'auth/network-request-failed':'Falha de conexão com a internet.'
-        }; return map[code] || ('Não foi possível concluir: ' + (err?.message||code));
+        }; return map[code] || (err?.message ? String(err.message) : ('Não foi possível concluir: ' + code));
       }
     });
   });
