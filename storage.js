@@ -44,10 +44,14 @@
     const db = firebase.database();
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(console.error);
 
+    let readyResolved = false;
+    const finishReady = (value) => { if (!readyResolved) { readyResolved = true; resolve(value); } };
+    setTimeout(() => finishReady(auth.currentUser || null), 5000);
+
     auth.onAuthStateChanged(async user => {
       if (listener && userRef) userRef.child('dados').off('value', listener);
       listener = null; userRef = null; uid = user ? user.uid : ''; cache = {};
-      if (!user) { resolve(null); window.dispatchEvent(new CustomEvent('locagest-auth-changed',{detail:null})); return; }
+      if (!user) { finishReady(null); window.dispatchEvent(new CustomEvent('locagest-auth-changed',{detail:null})); return; }
       readLocal();
       userRef = db.ref('usuarios/' + uid);
       try {
@@ -60,7 +64,7 @@
           window.dispatchEvent(new CustomEvent('locagest-data-changed'));
         });
       } catch (e) { console.error('Falha ao carregar dados do Firebase', e); }
-      resolve(user);
+      finishReady(user);
       window.dispatchEvent(new CustomEvent('locagest-auth-changed',{detail:user}));
     });
 
